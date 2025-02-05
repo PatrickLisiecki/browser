@@ -1,3 +1,6 @@
+WIDTH = 800
+
+
 def layout(text):
     display_list = []
     HSTEP, VSTEP = 13, 18
