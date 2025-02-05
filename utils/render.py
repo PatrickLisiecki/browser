@@ -1,9 +1,9 @@
 WIDTH = 800
+HSTEP, VSTEP = 13, 18
 
 
 def layout(text):
     display_list = []
-    HSTEP, VSTEP = 13, 18
     cursor_x, cursor_y = HSTEP, VSTEP
     for c in text:
         display_list.append((cursor_x, cursor_y, c))

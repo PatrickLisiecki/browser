@@ -4,6 +4,7 @@ from utils.text import lex
 from utils.render import layout
 
 WIDTH, HEIGHT = 800, 600
+HSTEP, VSTEP = 13, 18
 SCROLL_STEP = 100
 
 
@@ -26,6 +27,8 @@ class Browser:
     def draw(self):
         self.canvas.delete("all")
         for x, y, char in self.display_list:
+            if y > self.scroll + HEIGHT: continue
+            if y + VSTEP < self.scroll: continue
             self.canvas.create_text(x, y - self.scroll, text=char)
 
     def scrolldown(self, e):
