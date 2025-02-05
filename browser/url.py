@@ -45,6 +45,8 @@ class URL:
         # Create and format request
         request = "GET {} HTTP/1.0\r\n".format(self.path)
         request += "Host: {}\r\n".format(self.host)
+        request += "Connection: close\r\n"
+        request += "User-Agent: Python Browser\r\n"
         request += "\r\n"
 
         # Convert to bytes and send the request
